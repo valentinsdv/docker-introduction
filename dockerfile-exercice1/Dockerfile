@@ -5,7 +5,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copier les fichiers package.json et package-lock.json pour installer les dépendances
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 # Copier les fichiers sources de l'application dans le conteneur
 COPY src ./src
