@@ -1,0 +1,8 @@
+services:
+  quiz:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: quiz-docker
+    ports:
+      - "4000:4000"
