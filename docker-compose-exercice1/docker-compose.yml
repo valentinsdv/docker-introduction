@@ -1,0 +1,23 @@
+
+services:
+  drupal:
+    image: drupal:10-apache
+    container_name: tp-drupal
+    ports:
+      - "8081:80"
+    volumes:
+      - drupal-data:/var/www/html
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: tp-postgres
+    environment:
+      POSTGRES_PASSWORD: TpDocker2026!
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  drupal-data:
+  postgres-data:
